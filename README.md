@@ -6,7 +6,7 @@ In order to run a code, you have to execute this command in Terminal with the ap
 
 <hr>
 
-***java Simulator*** *MAX_TIME, X_ARRIVAL_RATE, Y_ARRIVAL_RATE, X_AVERAGE_SERVICE_TIME, Y_AVERAGE_SERVICE_TIME, POLICY, PROBABILITY*
+***java Simulator*** *MAX_TIME X_ARRIVAL_RATE Y_ARRIVAL_RATE X_AVERAGE_SERVICE_TIME Y_AVERAGE_SERVICE_TIME POLICY PROBABILITY*
 
 <hr>
 
