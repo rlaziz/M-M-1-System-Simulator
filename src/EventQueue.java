@@ -3,6 +3,7 @@ public class EventQueue {
     * EventQueue - A Data-Structure that will change its behaviour based on Policy
     * FIFO(First In First Out) policy - Same as Queue Data Structure
     * SJN(Shorted Job Next) policy - Same as Binary Tree Data Structure
+    * Type - Birt
     */
     private class Node {
         private Node left;
