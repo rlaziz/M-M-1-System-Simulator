@@ -172,25 +172,25 @@ public class Simulator {
         this.eventQueue.push(newMonitorEvent);
     }
 
-    private EventQueue eventQueue;
-    private Server server;
-    private RequestGenerator rgX;
-    private RequestGenerator rgY;
+    private final EventQueue eventQueue;
+    private final Server server;
+    private final RequestGenerator rgX;
+    private final RequestGenerator rgY;
 
     private int totalQueueLengths;
     private int waitingQueueLengths;
 
     private double currentTime;
-    private double requestLambdaX;
-    private double requestLambdaY;
-    private double probability;
+    private final double requestLambdaX;
+    private final double requestLambdaY;
+    private final double probability;
 
     private double busyTime;
     private double responseTimeX;
     private double responseTimeY;
 
-    private ArrayList<Double> waitTimesX;
-    private ArrayList<Double> waitTimesY;
+    private final ArrayList<Double> waitTimesX;
+    private final ArrayList<Double> waitTimesY;
 
     private int amountOfLoops;
     private int completedX;

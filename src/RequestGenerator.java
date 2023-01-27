@@ -14,9 +14,7 @@ public class RequestGenerator {
         this.lambda = 1 / averageServiceTime;
         this.currentIndex = 0;
     }
-    public int numGenerated(){
-        return this.currentIndex;
-    }
+
     public Request generateNewRequest(double arrivalTime){
         double serviceTime = Exponent.exponent(this.lambda);
         Request newRequest = new Request(this.className, arrivalTime, serviceTime, this.currentIndex, 0);

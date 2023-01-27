@@ -5,10 +5,10 @@ public class EventQueue {
     * SJN(Shorted Job Next) policy - Same as Binary Tree Data Structure
     * Type - Birt
     */
-    private class Node {
+    private static class Node {
         private Node left;
         private Node right;
-        private Event event;
+        private final Event event;
 
         Node(Event event){
             this.left = null;
@@ -17,13 +17,10 @@ public class EventQueue {
         }
     }
 
-    private String type;
     private Node root;
-    private int size;
 
     EventQueue(){
         this.root = null;
-        this.size = 0;
     }
 
     public void push(Event event){
@@ -52,7 +49,6 @@ public class EventQueue {
                 }
             }
         }
-        this.size++;
     }
     public Event pop(){
         if(this.root == null){
@@ -69,11 +65,7 @@ public class EventQueue {
             }else{
                 parent.left = current.right;
             }
-            this.size--;
             return current.event;
         }
-    }
-    public int size(){
-        return this.size;
     }
 }

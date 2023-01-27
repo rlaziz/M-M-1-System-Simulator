@@ -6,10 +6,10 @@ public class Server {
     * This class picks a request with currently the highest priority ( varies with policy )
     */
 
-    private class Node {
+    private static class Node {
         private Node left;
         private Node right;
-        private Request request;
+        private final Request request;
 
         Node(Request request){
             this.request = request;
@@ -18,17 +18,13 @@ public class Server {
 
     private Node root;
     private int length;
-    private String policy;
+    private final String policy;
 
-    private int timesEnqueued;
-    private int completed;
     private boolean isBusy;
     public Server(String policy){
         this.policy = policy;
         this.root = null;
         this.length = 0;
-        this.timesEnqueued = 0;
-        this.completed = 0;
     }
     public void add(Request request){
         if(Objects.equals(this.policy, "FIFO")){
@@ -37,7 +33,6 @@ public class Server {
             this.addSJN(request);
         }
         this.length++;
-        this.timesEnqueued++;
     }
     private void addFIFO(Request request){
 
@@ -94,7 +89,6 @@ public class Server {
 
         this.length--;
         this.isBusy = false;
-        this.completed++;
         return removed;
     }
     private Request removeFIFO(){
@@ -148,12 +142,7 @@ public class Server {
     public void setBusy(){
         this.isBusy = true;
     }
-    public int getTimesEnqueued(){
-        return this.timesEnqueued;
-    }
-    public int getCompleted(){
-        return this.completed;
-    }
+
     public boolean isBusy(){
         return this.isBusy;
     }
